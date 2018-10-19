@@ -1,0 +1,65 @@
+<div style="margin-top:20px;padding:10px;">
+    <div class="row" ng-if="vm.model.toggleContactMgmt">
+        <div class="col-md-6 col-md-offset-3">
+            <contact-management update-create="vm.updateCreate(editFlag,contact,index)" edit-contact="vm.model.selectedRecordToEdit"></contact-management>
+        </div>
+    </div>
+    <div class="row" ng-if="!vm.model.toggleContactMgmt">
+        <div class="col-md-2">
+            <input type="button" class="btn btn-primary" value="Add Contact" ng-click="vm.addContact()" />
+        </div>
+    </div>
+    <div class="row" style="margin-top:20px;padding:10px;">
+        <div class="col-md-4" ng-repeat="contact in vm.model.contacts track by $index">
+            <div class="panel panel-default" style="min-height:300px;">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <span class="panel-title">{{contact.ContactName.join(",")}}</span></div>
+                        <div class="col-md-2">
+                            <input type="button" ng-click="vm.editRecord(contact,$index)" class="btn btn-primary" value="Edit" />
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">Contact Title</div>
+                        <div class="col-md-8">{{contact.ContactTitle.join(",")}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">Company Name</div>
+                        <div class="col-md-8">{{contact.CompanyName.join(",")}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">City</div>
+                        <div class="col-md-8">{{contact.City.join(",")}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">Country</div>
+                        <div class="col-md-8">{{contact.Country.join(",")}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">Customer ID</div>
+                        <div class="col-md-8">{{contact.CustomerID.join(",")}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">Email</div>
+                        <div class="col-md-8">{{contact.Email.join(",")}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">Fax</div>
+                        <div class="col-md-8">{{contact.Fax.join(",")}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">Phone</div>
+                        <div class="col-md-8">{{contact.Phone.join(",")}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">Postal Code</div>
+                        <div class="col-md-8">{{contact.PostalCode.join(",")}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

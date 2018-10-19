@@ -1,0 +1,52 @@
+<div style="margin-top:20px;padding:10px;">
+    <div class="row" ng-if="vm.model.toggleContactMgmt">
+        <div class="col-md-6 col-md-offset-3">
+            <contact-management update-create="vm.updateCreate(editFlag,contact,index)" edit-contact="vm.model.selectedRecordToEdit"></contact-management>
+        </div>
+    </div>
+    <div class="row" ng-if="!vm.model.toggleContactMgmt">
+        <div class="col-md-2">
+            <input type="button" class="btn btn-primary" value="Add Contact" ng-click="vm.addContact()" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table table-bordered table-striped track by index">
+                <thead>
+                    <tr>
+                        <th>Contact Name</th>
+                        <th>Contact Title</th>
+                        <th>Company Name</th>
+                        <th>City</th>
+                        <th>Country</th>
+                        <th>Customer ID</th>
+                        <th>Email</th>
+                        <th>Fax</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Postal Code</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="contact in vm.model.contacts">
+                        <td>{{contact.ContactName.join(",")}}</td>
+                        <td>{{contact.ContactTitle.join(",")}}</td>
+                        <td>{{contact.CompanyName.join(",")}}</td>
+                        <td>{{contact.City.join(",")}}</td>
+                        <td>{{contact.Country.join(",")}}</td>
+                        <td>{{contact.CustomerID.join(",")}}</td>
+                        <td>{{contact.Email.join(",")}}</td>
+                        <td>{{contact.Fax.join(",")}}</td>
+                        <td>{{contact.Phone.join(",")}}</td>
+                        <td>{{contact.Address.join(",")}}</td>
+                        <td>{{contact.PostalCode.join(",")}}</td>
+                        <td>
+                            <input type="button" ng-click="vm.editRecord(contact,$index)" class="btn btn-primary" value="Edit" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

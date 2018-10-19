@@ -1,0 +1,20 @@
+{
+  "name": "AddressBook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-route": "^1.7.5",
+    "bootstrap": "^3.3.7",
+    "express": "^4.16.4",
+    "xml2js": "^0.4.19"
+  }
+}
